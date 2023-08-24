@@ -1,0 +1,65 @@
+main {
+  background: var(--dark-slate);
+  font-family: "Roboto", sans-serif;
+}
+
+.grid {
+  animation: fadeIn 700ms ease-in 1;
+  background: var(--white);
+}
+
+.col-span-7 {
+  color: var(--charcoal);
+}
+
+#banner {
+  background-image: url('../assets/illustration-sign-up-desktop.svg') !important;
+}
+
+#form-section {
+  background: var(--white);
+  user-select: none;
+}
+
+#submit {
+  background-color: var(--dark-slate);
+  color: var(--white);
+
+  &:active {
+    background: var(--color-primary);
+    box-shadow: 0px 5px 20px 0px var(--color-primary);
+  }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #banner {
+    background: url('../assets/illustration-sign-up-desktop.svg?v=1');
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: max-content;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 1023px) {
+  #banner {
+    background: url('../assets/illustration-sign-up-mobile.svg?v=1');
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: max-content;
+    overflow: hidden;
+  }
+}
