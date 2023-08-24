@@ -37,7 +37,7 @@ const SignUp = () => {
       email: email
     })
 
-    navigate(`/success?${searchParams}`);
+    navigate(`/success`);
   };
 
   return (
