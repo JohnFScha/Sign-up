@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import ListIcon from "../assets/icon-list.svg";
 import "./SignUp.css";
@@ -11,7 +11,6 @@ const SignUp = () => {
   const emailRef = useRef("");
   const labelRef = useRef("");
   const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
   const emailRegex = /^[a-zA-Z0-9._-]{2,}@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{3,}$/;
 
   const handleSubmit = (e) => {
@@ -32,12 +31,8 @@ const SignUp = () => {
       formRef.current,
       API_KEY
     );
-    
-    setSearchParams({
-      email: email
-    })
 
-    navigate(`/success`);
+    navigate(`/success?email=${encodeURIComponent(email)}`);
   };
 
   return (
