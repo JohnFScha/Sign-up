@@ -11,7 +11,7 @@ const SignUp = () => {
   const emailRef = useRef("");
   const labelRef = useRef("");
   const navigate = useNavigate();
-  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  const emailRegex = /^[a-zA-Z0-9._-]{2,}@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{3,}$/;
 
   const handleSubmit = (e) => {
     e.preventDefault();
