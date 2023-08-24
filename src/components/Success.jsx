@@ -6,7 +6,8 @@ import './Success.css'
 const Success = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const email = location.search.substring(2);
+  const queryParams = new URLSearchParams(location.search);
+  const email = queryParams.get('email');
 
   const clickHandler = (e) => {
     e.preventDefault();
